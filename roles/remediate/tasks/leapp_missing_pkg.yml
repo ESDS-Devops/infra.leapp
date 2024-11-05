@@ -11,7 +11,7 @@
 
     - name: leapp_missing_pkg | End play if no leapp report exists
       ansible.builtin.meta: end_host
-      when: leapp_report_stat.stat.exists is false
+      when: leapp_report_stat.stat.exists == false
 
     - name: leapp_missing_pkg | Read leapp report
       ansible.builtin.slurp:
